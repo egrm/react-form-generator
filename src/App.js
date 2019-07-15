@@ -14,15 +14,15 @@ function App() {
     },
     {
       "label": "caption",
-      "type": "textfield"
+      "type": "text"
     },
     {
       "label": "date",
-      "type": "datefield"
+      "type": "date"
     },
     {
       "label": "which color?",
-      "type": "radio"
+      "type": "radio",
       "options": [
         {
           "label": "blue",
@@ -37,7 +37,7 @@ function App() {
           "value": "blue"
         }
       ]
-    },
+    }
   ]
 }`);
   return (
