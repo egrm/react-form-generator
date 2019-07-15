@@ -1,15 +1,7 @@
 import React from "react";
 import nanoid from "nanoid";
 import testConfig from "./testConfig.js";
-
-function BasicField({label, name, type}) {
-  return (
-    <div>
-      <label htmlFor={name}>{label}</label>
-      <input id={name} name={name} type={type} />
-    </div>
-  );
-}
+import BasicField from "./components/fields/BasicField.js";
 
 function RadioField({label, name, type, options}) {
   function Option({label, value, name}) {
