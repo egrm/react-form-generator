@@ -13,10 +13,6 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.svg$/,
-        use: ["@svgr/webpack", "file-loader"],
-      },
-      {
         test: /\.(png|jpg|gif|mp4)$/,
         use: ["file-loader"],
       },
