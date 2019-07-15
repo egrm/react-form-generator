@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 
 function App() {
   const [config, setConfig] = React.useState(`{
@@ -47,6 +46,10 @@ function App() {
         <form action="javascript:void(0)">
           <textarea
             name="config"
+            style={{
+              height: "30vw",
+              width: "50vh",
+            }}
             value={config}
             onChange={(e) => {
               setConfig(e.target.value);
