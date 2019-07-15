@@ -1,4 +1,33 @@
 import React from "react";
+import nanoid from "nanoid";
+
+function TextField({ label, name }) {
+  return (
+    <div>
+      <label htmlFor={name}>{label}</label>
+      <input id={name} name={name} type="text" />
+    </div>
+  );
+}
+
+function Result({ config }) {
+  function renderItem(item) {
+    item.name = item.name || nanoid();
+    item.label = item.label || `${item.type} label`;
+    switch (item.type) {
+      case "text":
+        return <TextField {...item} />;
+      default:
+        return <TextField {...item} />;
+    }
+  }
+  return (
+    <div id="result">
+      <h3>{config.title || "Your Form"}</h3>
+      {config.items.map((el, i) => renderItem(el))}
+    </div>
+  );
+}
 
 function App() {
   const [config, setConfig] = React.useState(`{
