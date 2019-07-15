@@ -2,32 +2,7 @@ import React from "react";
 import nanoid from "nanoid";
 import testConfig from "./testConfig.js";
 import BasicField from "./components/fields/BasicField.js";
-
-function RadioField({label, name, type, options}) {
-  function Option({label, value, name}) {
-    const id = nanoid();
-    value = value || label;
-    return (
-      <div>
-        <input
-          type="radio"
-          id={id}
-          name={name}
-          value={value}
-        />
-        <label htmlFor={id}>{label}</label>
-      </div>
-    );
-  }
-  return (
-    <div>
-      <p>{label}</p>
-      {options.map((option) => (
-        <Option {...option} name={name} />
-      ))}
-    </div>
-  );
-}
+import RadioField from "./components/fields/RadioField.js";
 
 function TextareaField({label, name}) {
   return (
