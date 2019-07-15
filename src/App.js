@@ -4,10 +4,8 @@ import testConfig from "./testConfig.js";
 import BasicField from "./components/fields/BasicField.js";
 import RadioField from "./components/fields/RadioField.js";
 import TextareaField from "./components/fields/TextareaField.js";
+import Button from "./components/buttons/Button.js";
 
-function FormButton({label, type}) {
-  return <button type={type}>{label}</button>;
-}
 
 function Result({config}) {
   function renderField(field) {
@@ -24,7 +22,7 @@ function Result({config}) {
   }
   function renderButton(button) {
     button.name = button.name || "Click here";
-    return <FormButton {...button} />;
+    return <Button {...button} />;
   }
   return (
     <div id="result">
