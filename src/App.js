@@ -1,6 +1,6 @@
 import React from "react";
 import nanoid from "nanoid";
-import testConfig from './testConfig.js'
+import testConfig from "./testConfig.js";
 
 function BasicField({label, name, type}) {
   return (
@@ -46,23 +46,41 @@ function TextareaField({label, name}) {
   );
 }
 
+function FormButton({label, type}) {
+  return <button type={type}>{label}</button>;
+}
+
 function Result({config}) {
-  function renderItem(item) {
-    item.name = item.name || nanoid();
-    item.label = item.label || `Label for ${item.type}`;
-    switch (item.type) {
+  function renderField(field) {
+    field.name = field.name || nanoid();
+    field.label = field.label || `Label for ${field.type}`;
+    switch (field.type) {
       case "radio":
-        return <RadioField {...item} />;
+        return <RadioField {...field} />;
       case "textarea":
-        return <TextareaField {...item} />;
+        return <TextareaField {...field} />;
       default:
-        return <BasicField {...item} />;
+        return <BasicField {...field} />;
     }
+  }
+  function renderButton(button) {
+    button.name = button.name || "Click here";
+    return <FormButton {...button} />;
   }
   return (
     <div id="result">
       <h3>{config.title || "Your Form"}</h3>
-      {config.items.map((el, i) => renderItem(el))}
+      <div>
+        {config.fields.map((field, i) =>
+          renderField(field),
+        )}
+      </div>
+      <br />
+      <div>
+        {config.buttons.map((button, i) =>
+          renderButton(button),
+        )}
+      </div>
     </div>
   );
 }

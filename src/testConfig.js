@@ -1,6 +1,6 @@
 const testConfig = `{
   "title": "my form",
-  "items": [
+  "fields": [
     {
       "label": "count",
       "type": "number"
@@ -38,6 +38,18 @@ const testConfig = `{
           "value": "yellow"
         }
       ]
+    }
+  ],
+  "buttons": [
+    {
+      "label": "Send",
+      "type": "submit"
+    },
+    {
+      "label": "Apply"
+    },
+    {
+      "label": "Cancel"
     }
   ]
 }`;
