@@ -1,24 +1,61 @@
 import React from "react";
 import nanoid from "nanoid";
 
-function TextField({ label, name }) {
+function BasicField({label, name, type}) {
   return (
     <div>
       <label htmlFor={name}>{label}</label>
-      <input id={name} name={name} type="text" />
+      <input id={name} name={name} type={type} />
     </div>
   );
 }
 
-function Result({ config }) {
+function RadioField({label, name, type, options}) {
+  function Option({label, value, name}) {
+    const id = nanoid();
+    value = value || label;
+    return (
+      <div>
+        <input
+          type="radio"
+          id={id}
+          name={name}
+          value={value}
+        />
+        <label htmlFor={id}>{label}</label>
+      </div>
+    );
+  }
+  return (
+    <div>
+      <p>{label}</p>
+      {options.map((option) => (
+        <Option {...option} name={name} />
+      ))}
+    </div>
+  );
+}
+
+function TextareaField({label, name}) {
+  return (
+    <div>
+      <label htmlFor={name}>{label}</label>
+      <textarea id={this} name={name} />
+    </div>
+  );
+}
+
+function Result({config}) {
   function renderItem(item) {
     item.name = item.name || nanoid();
-    item.label = item.label || `${item.type} label`;
+    item.label = item.label || `Label for ${item.type}`;
     switch (item.type) {
-      case "text":
-        return <TextField {...item} />;
+      case "radio":
+        return <RadioField {...item} />;
+      case "textarea":
+        return <TextareaField {...item} />;
       default:
-        return <TextField {...item} />;
+        return <BasicField {...item} />;
     }
   }
   return (
@@ -38,12 +75,16 @@ function App() {
       "type": "number"
     },
     {
-      "label": "is editable",
+      "label": "is this true?",
       "type": "checkbox"
     },
     {
       "label": "caption",
       "type": "text"
+    },
+    {
+      "label": "caption",
+      "type": "textarea"
     },
     {
       "label": "date",
@@ -58,12 +99,12 @@ function App() {
           "value": "blue"
         },
         {
-          "label": "blue",
-          "value": "blue"
+          "label": "green",
+          "value": "green"
         },
         {
-          "label": "blue",
-          "value": "blue"
+          "label": "yellow",
+          "value": "yellow"
         }
       ]
     }
@@ -88,6 +129,7 @@ function App() {
           <button type="submit">Apply</button>
         </form>
       </div>
+      <Result config={JSON.parse(config)} />
     </>
   );
 }
