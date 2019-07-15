@@ -1,5 +1,6 @@
 import React from "react";
 import nanoid from "nanoid";
+import testConfig from './testConfig.js'
 
 function BasicField({label, name, type}) {
   return (
@@ -67,49 +68,7 @@ function Result({config}) {
 }
 
 function App() {
-  const [config, setConfig] = React.useState(`{
-  "title": "my form",
-  "items": [
-    {
-      "label": "count",
-      "type": "number"
-    },
-    {
-      "label": "is this true?",
-      "type": "checkbox"
-    },
-    {
-      "label": "caption",
-      "type": "text"
-    },
-    {
-      "label": "caption",
-      "type": "textarea"
-    },
-    {
-      "label": "date",
-      "type": "date"
-    },
-    {
-      "label": "which color?",
-      "type": "radio",
-      "options": [
-        {
-          "label": "blue",
-          "value": "blue"
-        },
-        {
-          "label": "green",
-          "value": "green"
-        },
-        {
-          "label": "yellow",
-          "value": "yellow"
-        }
-      ]
-    }
-  ]
-}`);
+  const [config, setConfig] = React.useState(testConfig);
   return (
     <>
       <div id="config">
