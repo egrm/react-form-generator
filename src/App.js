@@ -8,14 +8,14 @@ import testConfig from "./testConfig.js";
 
 function App() {
   const [config, setConfig] = React.useState(testConfig);
-  const tabClasses = "dn tab w-100 w-50-ns absolute";
+  const tabClasses = "dn absolute w-100 w-50-ns vh-50-ns overflow-hidden";
   const tabNavClasses = {
     forLabel: "dib pa2 ma2 dim br2",
     forInput: "dn",
   };
   return (
-    <div className="w-100 vh-100 flex flex-column justify-center items-center">
-      <div className="helvetica border-box w-100 w-50-ns vh-50-ns">
+    <div id="container" className="w-100 vh-100 flex flex-column justify-start justify-center-ns items-center">
+      <div className="helvetica border-box w-100 w-50-ns vh-100 vh-50-ns">
         <input
           type="radio"
           name="tabs"

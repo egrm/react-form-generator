@@ -21,7 +21,7 @@ function ResultTab({config, className=''}) {
   }
   return (
     <div id="ResultTab" className={className}>
-      <form action="javascript:void(0)">
+      <form className="h-100 overflow-y-auto" action="javascript:void(0)">
         <h3>{config.title || "Your Form"}</h3>
         <div>
           {config.fields.map((field, i) =>

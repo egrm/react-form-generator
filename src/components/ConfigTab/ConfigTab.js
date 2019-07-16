@@ -3,18 +3,17 @@ import React from "react";
 function ConfigTab({onChange, onSubmit, value, className=''}) {
   return (
     <div id="ConfigTab" className={className}>
-      <form action="javascript:void(0)" onSubmit={onSubmit}>
+      <form className="h-100 flex flex-column" action="javascript:void(0)" onSubmit={onSubmit}>
         <textarea
           name="config"
-          style={{
-            height: "30vw",
-            width: "50vh",
-          }}
+          style={{resize: "none"}}
+          className="bn pa0 w-100 h-100"
           value={value}
           onChange={onChange}
         />
-        <br />
-        <button type="submit">Apply</button>
+          <div>
+            <button className="" type="submit">Apply</button>
+          </div>
       </form>
     </div>
   );

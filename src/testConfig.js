@@ -22,6 +22,126 @@ const testConfig = `{
       "type": "date"
     },
     {
+      "label": "count",
+      "type": "number"
+    },
+    {
+      "label": "is this true?",
+      "type": "checkbox"
+    },
+    {
+      "label": "caption",
+      "type": "text"
+    },
+    {
+      "label": "caption",
+      "type": "textarea"
+    },
+    {
+      "label": "date",
+      "type": "date"
+    },
+    {
+      "label": "count",
+      "type": "number"
+    },
+    {
+      "label": "is this true?",
+      "type": "checkbox"
+    },
+    {
+      "label": "caption",
+      "type": "text"
+    },
+    {
+      "label": "caption",
+      "type": "textarea"
+    },
+    {
+      "label": "date",
+      "type": "date"
+    },
+    {
+      "label": "count",
+      "type": "number"
+    },
+    {
+      "label": "is this true?",
+      "type": "checkbox"
+    },
+    {
+      "label": "caption",
+      "type": "text"
+    },
+    {
+      "label": "caption",
+      "type": "textarea"
+    },
+    {
+      "label": "date",
+      "type": "date"
+    },
+    {
+      "label": "count",
+      "type": "number"
+    },
+    {
+      "label": "is this true?",
+      "type": "checkbox"
+    },
+    {
+      "label": "caption",
+      "type": "text"
+    },
+    {
+      "label": "caption",
+      "type": "textarea"
+    },
+    {
+      "label": "date",
+      "type": "date"
+    },
+    {
+      "label": "count",
+      "type": "number"
+    },
+    {
+      "label": "is this true?",
+      "type": "checkbox"
+    },
+    {
+      "label": "caption",
+      "type": "text"
+    },
+    {
+      "label": "caption",
+      "type": "textarea"
+    },
+    {
+      "label": "date",
+      "type": "date"
+    },
+    {
+      "label": "count",
+      "type": "number"
+    },
+    {
+      "label": "is this true?",
+      "type": "checkbox"
+    },
+    {
+      "label": "caption",
+      "type": "text"
+    },
+    {
+      "label": "caption",
+      "type": "textarea"
+    },
+    {
+      "label": "date",
+      "type": "date"
+    },
+    {
       "label": "which color?",
       "type": "radio",
       "options": [
