@@ -8,17 +8,17 @@ import testConfig from "./testConfig.js";
 
 function App() {
   const [config, setConfig] = React.useState(testConfig);
-  const tabClasses = "dn tab w-100 w-70-ns absolute";
+  const tabClasses = "dn tab w-100 w-50-ns absolute";
   const tabNavClasses = {
     forLabel: "",
     forInput: "dn"
   }
   return (
-    <>
-      <input type="radio" name="tabs" id="ConfigTab-nav" className={tabNavClasses.forInput} checked />
-      <label for="ConfigTab-nav" className={tabNavClasses.forLabel}>Config</label>
+    <div className="helvetica">
+      <input type="radio" name="tabs" id="ConfigTab-nav" className={tabNavClasses.forInput} defaultChecked />
+      <label htmlFor="ConfigTab-nav" className={tabNavClasses.forLabel}>Config</label>
       <input type="radio" name="tabs" id="ResultTab-nav" className={tabNavClasses.forInput} />
-      <label for="ResultTab-nav" className={tabNavClasses.forLabel}>Result</label>
+      <label htmlFor="ResultTab-nav" className={tabNavClasses.forLabel}>Result</label>
       <ConfigTab
         onChange={(e) => {
           setConfig(e.target.value);
@@ -26,11 +26,11 @@ function App() {
         className={tabClasses}
         value={config}
       />
-      <ResultTab
-        config={JSON.parse(config)}
-        className={tabClasses}
-      />
-      </>
+        <ResultTab
+          config={JSON.parse(config)}
+          className={tabClasses}
+        />
+        </div>
   );
 }
 
