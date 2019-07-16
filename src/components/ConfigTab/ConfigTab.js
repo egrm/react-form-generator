@@ -1,6 +1,6 @@
 import React from "react";
 
-function Config({onChange, onSubmit, value}) {
+function ConfigTab({onChange, onSubmit, value}) {
   return (<div id="config">
     <form action="javascript:void(0)" onSubmit={onSubmit}>
       <textarea
@@ -18,4 +18,4 @@ function Config({onChange, onSubmit, value}) {
   </div>);
 }
 
-export default Config;
+export default ConfigTab;

@@ -5,18 +5,18 @@ import RadioField from "../fields/RadioField.js";
 import TextareaField from "../fields/TextareaField.js";
 import Button from "../buttons/Button.js";
 
-function Result({config}) {
+function ResultTab({config}) {
   function renderField(field) {
-    const key = nanoid()
+    const key = nanoid();
     field.name = field.name || nanoid();
     field.label = field.label || "field label";
     switch (field.type) {
       case "radio":
-        return <RadioField {...field} key={key}/>;
+        return <RadioField {...field} key={key} />;
       case "textarea":
-        return <TextareaField {...field} key={key}/>;
+        return <TextareaField {...field} key={key} />;
       default:
-        return <BasicField {...field} key={key}/>;
+        return <BasicField {...field} key={key} />;
     }
   }
   return (
@@ -39,4 +39,4 @@ function Result({config}) {
   );
 }
 
-export default Result;
+export default ResultTab;

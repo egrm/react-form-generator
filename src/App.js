@@ -1,20 +1,20 @@
 import React from "react";
 import nanoid from "nanoid";
 import testConfig from "./testConfig.js";
-import Result from "./components/Result/Result.js";
-import Config from "./components/Config/Config.js";
+import ResultTab from "./components/ResultTab/ResultTab.js";
+import ConfigTab from "./components/ConfigTab/ConfigTab.js";
 
 function App() {
   const [config, setConfig] = React.useState(testConfig);
   return (
     <>
-      <Config
+      <ConfigTab
         onChange={(e) => {
           setConfig(e.target.value);
         }}
         value={config}
       />
-      <Result config={JSON.parse(config)} />
+      <ResultTab config={JSON.parse(config)} />
     </>
   );
 }
