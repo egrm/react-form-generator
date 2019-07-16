@@ -26,10 +26,12 @@ function App() {
         <div>
           <TabButton
             label="Config"
+            currentTab={currentTab}
             setCurrentTab={setCurrentTab}
           />
           <TabButton
             label="Result"
+            currentTab={currentTab}
             setCurrentTab={setCurrentTab}
           />
         </div>
