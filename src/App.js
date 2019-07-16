@@ -19,10 +19,6 @@ function Result({config}) {
         return <BasicField {...field} />;
     }
   }
-  function renderButton(button) {
-    button.name = button.name || "Click here";
-    return <Button {...button} />;
-  }
   return (
     <div id="result">
       <form action="javascript:void(0)">
@@ -34,9 +30,9 @@ function Result({config}) {
         </div>
         <br />
         <div>
-          {config.buttons.map((button, i) =>
-            renderButton(button),
-          )}
+          {config.buttons.map((button, i) => (
+            <Button {...button} />
+          ))}
         </div>
       </form>
     </div>
