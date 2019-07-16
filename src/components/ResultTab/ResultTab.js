@@ -5,7 +5,7 @@ import RadioField from "../fields/RadioField.js";
 import TextareaField from "../fields/TextareaField.js";
 import Button from "../buttons/Button.js";
 
-function ResultTab({config, className=''}) {
+function ResultTab({config, className = "", active}) {
   function renderField(field) {
     const key = nanoid();
     field.name = field.name || nanoid();
@@ -20,8 +20,14 @@ function ResultTab({config, className=''}) {
     }
   }
   return (
-    <div id="ResultTab" className={className}>
-      <form className="h-100 overflow-y-auto" action="javascript:void(0)">
+    <div
+      id="ResultTab"
+      className={`${className}${active ? "" : " dn"}`}
+    >
+      <form
+        className="h-100 overflow-y-auto"
+        action="javascript:void(0)"
+      >
         <h3>{config.title || "Your Form"}</h3>
         <div>
           {config.fields.map((field, i) =>

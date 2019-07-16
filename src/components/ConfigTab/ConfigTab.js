@@ -1,9 +1,22 @@
 import React from "react";
 
-function ConfigTab({onChange, onSubmit, value, className=''}) {
+function ConfigTab({
+  onChange,
+  onSubmit,
+  value,
+  className = "",
+  active,
+}) {
   return (
-    <div id="ConfigTab" className={className}>
-      <form className="h-100 flex flex-column" action="javascript:void(0)" onSubmit={onSubmit}>
+    <div
+      id="ConfigTab"
+      className={`${className}${active ? "" : " dn"}`}
+    >
+      <form
+        className="h-100 flex flex-column"
+        action="javascript:void(0)"
+        onSubmit={onSubmit}
+      >
         <textarea
           name="config"
           style={{resize: "none"}}
@@ -11,9 +24,9 @@ function ConfigTab({onChange, onSubmit, value, className=''}) {
           value={value}
           onChange={onChange}
         />
-          <div>
-            <button className="" type="submit">Apply</button>
-          </div>
+        <div>
+          <button type="submit">Apply</button>
+        </div>
       </form>
     </div>
   );
