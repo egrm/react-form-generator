@@ -9,7 +9,7 @@ import Button from "./components/buttons/Button.js";
 function Result({config}) {
   function renderField(field) {
     field.name = field.name || nanoid();
-    field.label = field.label || `Label for ${field.type}`;
+    field.label = field.label || "field label";
     switch (field.type) {
       case "radio":
         return <RadioField {...field} />;
