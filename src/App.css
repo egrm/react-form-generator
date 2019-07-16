@@ -1,0 +1,7 @@
+#ConfigTab-nav:checked ~ #ConfigTab {
+  display: block;
+}
+
+#ResultTab-nav:checked ~ #ResultTab {
+  display: block;
+}
