@@ -2,6 +2,7 @@ import React from "react";
 import nanoid from "nanoid";
 import ResultTab from "./components/ResultTab/ResultTab.js";
 import ConfigTab from "./components/ConfigTab/ConfigTab.js";
+import TabButton from "./components/buttons/TabButton.js";
 import "tachyons";
 import "./App.css";
 import testConfig from "./testConfig.js";
@@ -23,20 +24,14 @@ function App() {
     >
       <div className="helvetica border-box w-100 w-50-ns vh-100 vh-50-ns">
         <div>
-          <button
-            onClick={() => {
-              setCurrentTab("Config");
-            }}
-          >
-            Config
-          </button>
-          <button
-            onClick={() => {
-              setCurrentTab("Result");
-            }}
-          >
-            Result
-          </button>
+          <TabButton
+            label="Config"
+            setCurrentTab={setCurrentTab}
+          />
+          <TabButton
+            label="Result"
+            setCurrentTab={setCurrentTab}
+          />
         </div>
         <ConfigTab
           onChange={(e) => {
