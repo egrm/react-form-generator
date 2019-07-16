@@ -7,15 +7,16 @@ import Button from "../buttons/Button.js";
 
 function Result({config}) {
   function renderField(field) {
+    const key = nanoid()
     field.name = field.name || nanoid();
     field.label = field.label || "field label";
     switch (field.type) {
       case "radio":
-        return <RadioField {...field} />;
+        return <RadioField {...field} key={key}/>;
       case "textarea":
-        return <TextareaField {...field} />;
+        return <TextareaField {...field} key={key}/>;
       default:
-        return <BasicField {...field} />;
+        return <BasicField {...field} key={key}/>;
     }
   }
   return (
@@ -30,7 +31,7 @@ function Result({config}) {
         <br />
         <div>
           {config.buttons.map((button, i) => (
-            <Button {...button} />
+            <Button {...button} key={nanoid()} />
           ))}
         </div>
       </form>
