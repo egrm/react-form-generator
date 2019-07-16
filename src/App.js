@@ -6,7 +6,6 @@ import RadioField from "./components/fields/RadioField.js";
 import TextareaField from "./components/fields/TextareaField.js";
 import Button from "./components/buttons/Button.js";
 
-
 function Result({config}) {
   function renderField(field) {
     field.name = field.name || nanoid();
@@ -26,18 +25,20 @@ function Result({config}) {
   }
   return (
     <div id="result">
-      <h3>{config.title || "Your Form"}</h3>
-      <div>
-        {config.fields.map((field, i) =>
-          renderField(field),
-        )}
-      </div>
-      <br />
-      <div>
-        {config.buttons.map((button, i) =>
-          renderButton(button),
-        )}
-      </div>
+      <form action="javascript:void(0)">
+        <h3>{config.title || "Your Form"}</h3>
+        <div>
+          {config.fields.map((field, i) =>
+            renderField(field),
+          )}
+        </div>
+        <br />
+        <div>
+          {config.buttons.map((button, i) =>
+            renderButton(button),
+          )}
+        </div>
+      </form>
     </div>
   );
 }

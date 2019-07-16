@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-function Button({label, type}) {
+function Button({label, type = "button"}) {
   return <button type={type}>{label}</button>;
 }
 
