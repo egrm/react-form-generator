@@ -20,7 +20,7 @@ function ResultTab({config}) {
     }
   }
   return (
-    <div id="result">
+    <div id="ResultTab" class="tab">
       <form action="javascript:void(0)">
         <h3>{config.title || "Your Form"}</h3>
         <div>
