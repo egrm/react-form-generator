@@ -1,8 +1,8 @@
 import React from "react";
 
-function ConfigTab({onChange, onSubmit, value}) {
+function ConfigTab({onChange, onSubmit, value, className=''}) {
   return (
-    <div id="ConfigTab" class="tab">
+    <div id="ConfigTab" className={className}>
       <form action="javascript:void(0)" onSubmit={onSubmit}>
         <textarea
           name="config"

@@ -5,7 +5,7 @@ import RadioField from "../fields/RadioField.js";
 import TextareaField from "../fields/TextareaField.js";
 import Button from "../buttons/Button.js";
 
-function ResultTab({config}) {
+function ResultTab({config, className=''}) {
   function renderField(field) {
     const key = nanoid();
     field.name = field.name || nanoid();
@@ -20,7 +20,7 @@ function ResultTab({config}) {
     }
   }
   return (
-    <div id="ResultTab" class="tab">
+    <div id="ResultTab" className={className}>
       <form action="javascript:void(0)">
         <h3>{config.title || "Your Form"}</h3>
         <div>
