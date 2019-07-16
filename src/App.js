@@ -1,8 +1,9 @@
 import React from "react";
 import nanoid from "nanoid";
-import testConfig from "./testConfig.js";
 import ResultTab from "./components/ResultTab/ResultTab.js";
 import ConfigTab from "./components/ConfigTab/ConfigTab.js";
+import "tachyons";
+import testConfig from "./testConfig.js";
 
 function App() {
   const [config, setConfig] = React.useState(testConfig);
