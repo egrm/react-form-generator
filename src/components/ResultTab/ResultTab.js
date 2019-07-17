@@ -23,7 +23,9 @@ function ResultTab({config, className = "", active}) {
     return (
       <div
         id="ResultTab"
-        className={`${className}${active ? "" : " dn"}`}
+        className={`f4 i light-gray ${className}${
+          active ? "" : " dn"
+        }`}
       >
         <p>no valid form data supplied</p>
       </div>
@@ -32,7 +34,7 @@ function ResultTab({config, className = "", active}) {
     return (
       <div
         id="ResultTab"
-        className={`${className}${active ? "" : " dn"}`}
+        className={`f5 ${className}${active ? "" : " dn"}`}
       >
         <form
           className="h-100 overflow-y-auto"

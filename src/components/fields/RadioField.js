@@ -10,6 +10,7 @@ function RadioField({label, name, type, options}) {
         <input
           type="radio"
           id={value}
+          className="pa1 mr1"
           name={name}
           value={value}
         />
@@ -18,7 +19,7 @@ function RadioField({label, name, type, options}) {
     );
   }
   return (
-    <div>
+    <div className="flex flex-row justify-between items-center w-100 mt2 pb2 mb1 bb b--light-gray">
       <p>{label}</p>
       {options.map((option) => (
         <Option {...option} name={name} key={nanoid()}/>
