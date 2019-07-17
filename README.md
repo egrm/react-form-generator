@@ -4,6 +4,6 @@
 
 ### TODO
 
+- [x] better styles
 - [ ] JSON validation using a schema via ajv
 - [ ] relevant error messages
-- [ ] better styles
