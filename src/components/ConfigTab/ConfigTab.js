@@ -33,7 +33,7 @@ function ConfigTab({
             Please, provide valid JSON
           </p>
         )}
-        <div>
+        <div className="mt3">
           <Button type="submit" label="Apply" />
         </div>
       </form>
