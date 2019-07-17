@@ -20,12 +20,12 @@ function ConfigTab({
         <textarea
           name="config"
           style={{resize: "none"}}
-          className="bn pa0 w-100 h-100"
+          className="pa1 ba b--silver w-100 h-100"
           value={value}
           onChange={onChange}
         />
         <div>
-          <button type="submit">Apply</button>
+          <button className="pa2 br2 mt3" type="submit">Apply</button>
         </div>
       </form>
     </div>
