@@ -19,7 +19,31 @@ function ResultTab({config, className = "", active}) {
         return <BasicField {...field} key={key} />;
     }
   }
-  if (config === null) {
+  function generateFields(fields) {
+    if (
+      // ugly guards.
+      // in real world proper json schema validation is needed
+      fields === undefined ||
+      Object.keys(fields).length === 0
+    ) {
+      return null;
+    } else {
+      return fields.map((field, i) => renderField(field));
+    }
+  }
+  function generateButtons(buttons) {
+    if (
+      buttons === undefined ||
+      Object.keys(buttons).length === 0
+    ) {
+      return null;
+    } else {
+      return buttons.map((button, i) => (
+        <Button {...button} key={nanoid()} />
+      ));
+    }
+  }
+  if (config === null || Object.keys(config).length === 0) {
     return (
       <div
         id="ResultTab"
@@ -38,16 +62,10 @@ function ResultTab({config, className = "", active}) {
           className="h-100 overflow-y-auto"
           action="javascript:void(0)"
         >
-          <h3>{config.title || "Your Form"}</h3>
-          <div>
-            {config.fields.map((field, i) =>
-              renderField(field),
-            )}
-          </div>
+          <h3>{config.title || "default title"}</h3>
+          <div>{generateFields(config.fields)}</div>
           <div className="mt2">
-            {config.buttons.map((button, i) => (
-              <Button {...button} key={nanoid()} />
-            ))}
+            {generateButtons(config.buttons)}
           </div>
         </form>
       </div>
