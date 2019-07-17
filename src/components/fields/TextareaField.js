@@ -3,7 +3,7 @@ import React from "react";
 function TextareaField({label, name}) {
   return (
     <div className="flex flex-row justify-between items-center w-100 mt2 pb2 mb1 bb b--light-gray">
-      <label htmlFor={name} className="pa1 mr1">
+      <label htmlFor={name} className="mr2">
         {label}
       </label>
       <textarea

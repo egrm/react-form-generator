@@ -10,7 +10,7 @@ function RadioField({label, name, type, options}) {
         <input
           type="radio"
           id={value}
-          className="pa1 mr1"
+          className="mr2"
           name={name}
           value={value}
         />
