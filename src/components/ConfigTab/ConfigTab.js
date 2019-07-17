@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../buttons/Button.js";
 
 function ConfigTab({
   onChange,
@@ -25,7 +26,7 @@ function ConfigTab({
           onChange={onChange}
         />
         <div>
-          <button className="pa2 br2 mt3" type="submit">Apply</button>
+          <Button type="submit" label="Apply" />
         </div>
       </form>
     </div>
