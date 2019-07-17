@@ -19,30 +19,41 @@ function ResultTab({config, className = "", active}) {
         return <BasicField {...field} key={key} />;
     }
   }
-  return (
-    <div
-      id="ResultTab"
-      className={`${className}${active ? "" : " dn"}`}
-    >
-      <form
-        className="h-100 overflow-y-auto"
-        action="javascript:void(0)"
+  if (config === null) {
+    return (
+      <div
+        id="ResultTab"
+        className={`${className}${active ? "" : " dn"}`}
       >
-        <h3>{config.title || "Your Form"}</h3>
-        <div>
-          {config.fields.map((field, i) =>
-            renderField(field),
-          )}
-        </div>
-        <br />
-        <div>
-          {config.buttons.map((button, i) => (
-            <Button {...button} key={nanoid()} />
-          ))}
-        </div>
-      </form>
-    </div>
-  );
+        <p>no valid form data supplied</p>
+      </div>
+    );
+  } else {
+    return (
+      <div
+        id="ResultTab"
+        className={`${className}${active ? "" : " dn"}`}
+      >
+        <form
+          className="h-100 overflow-y-auto"
+          action="javascript:void(0)"
+        >
+          <h3>{config.title || "Your Form"}</h3>
+          <div>
+            {config.fields.map((field, i) =>
+              renderField(field),
+            )}
+          </div>
+          <br />
+          <div>
+            {config.buttons.map((button, i) => (
+              <Button {...button} key={nanoid()} />
+            ))}
+          </div>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default ResultTab;

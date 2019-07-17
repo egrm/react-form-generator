@@ -7,6 +7,7 @@ function ConfigTab({
   value,
   className = "",
   active,
+  error,
 }) {
   return (
     <div
@@ -21,10 +22,17 @@ function ConfigTab({
         <textarea
           name="config"
           style={{resize: "none"}}
-          className="pa1 ba b--silver w-100 h-100"
+          className={`pa2 ba w-100 h-100 ${
+            error ? "bw2 b--light-red" : "b--silver"
+          }`}
           value={value}
           onChange={onChange}
         />
+        {error && (
+          <p className="light-red b">
+            Please, provide valid JSON
+          </p>
+        )}
         <div>
           <Button type="submit" label="Apply" />
         </div>

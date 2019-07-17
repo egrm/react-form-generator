@@ -1,5 +1,6 @@
 import React from "react";
 import nanoid from "nanoid";
+import {Promise} from "bluebird";
 import ResultTab from "./components/ResultTab/ResultTab.js";
 import ConfigTab from "./components/ConfigTab/ConfigTab.js";
 import TabButton from "./components/buttons/TabButton.js";
@@ -7,10 +8,29 @@ import "tachyons";
 import testConfig from "./testConfig.js";
 
 function App() {
-  const [config, setConfig] = React.useState(testConfig);
   const [currentTab, setCurrentTab] = React.useState(
     "Config",
   );
+  const [jsonConfig, setJsonConfig] = React.useState(
+    testConfig,
+  );
+  const [resultConfig, setResultConfig] = React.useState({
+    data: null,
+    error: false,
+  });
+  function handleConfigSubmit(json) {
+    // TODO: use AJV for schema validation
+    Promise.method(JSON.parse)(json)
+      .then((result) => {
+        setResultConfig({data: result, error: false});
+      })
+      .catch((err) => {
+        setResultConfig((prevConfig) => ({
+          ...prevConfig,
+          error: true,
+        }));
+      });
+  }
   const tabClasses = "pa3 ba b--silver flex-auto";
   const tabNavClasses = {
     forLabel: "dib pa2 ma2 dim br2",
@@ -35,14 +55,18 @@ function App() {
         </div>
         <ConfigTab
           onChange={(e) => {
-            setConfig(e.target.value);
+            setJsonConfig(e.target.value);
+          }}
+          onSubmit={() => {
+            handleConfigSubmit(jsonConfig);
           }}
           className={tabClasses}
-          value={config}
+          value={jsonConfig}
+          error={resultConfig.error}
           active={currentTab === "Config"}
         />
         <ResultTab
-          config={JSON.parse(config)}
+          config={resultConfig.data}
           className={tabClasses}
           active={currentTab === "Result"}
         />
