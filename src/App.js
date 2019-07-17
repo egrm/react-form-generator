@@ -12,17 +12,17 @@ function App() {
   const [currentTab, setCurrentTab] = React.useState(
     "Config",
   );
-  const tabClasses =
-    "absolute w-100 w-50-ns vh-50-ns overflow-hidden";
+  const tabClasses = "flex-auto";
+  ("w-100 w-50-ns vh-50-ns overflow-hidden");
   const tabNavClasses = {
     forLabel: "dib pa2 ma2 dim br2",
   };
   return (
     <div
       id="container"
-      className="w-100 vh-100 flex flex-column justify-start justify-center-ns items-center"
+      className="helvetica w-100 vh-100 flex flex-column justify-start justify-center-ns items-center"
     >
-      <div className="helvetica border-box w-100 w-50-ns vh-100 vh-50-ns">
+      <div className="w-100 pa3 mw6 vh-100 vh-50-ns flex flex-column">
         <div>
           <TabButton
             label="Config"
