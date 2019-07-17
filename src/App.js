@@ -20,6 +20,7 @@ function App() {
   });
   function handleConfigSubmit(json) {
     // TODO: use AJV for schema validation
+    // current behaviour: crashes if passed an invalid config
     Promise.method(JSON.parse)(json)
       .then((result) => {
         setResultConfig({data: result, error: false});
