@@ -46,8 +46,7 @@ function ResultTab({config, className = "", active}) {
               renderField(field),
             )}
           </div>
-          <br />
-          <div>
+          <div className="mt2">
             {config.buttons.map((button, i) => (
               <Button {...button} key={nanoid()} />
             ))}
