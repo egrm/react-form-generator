@@ -2,8 +2,7 @@
 
 ### Check the demo [here](http://egrm-form-generator.surge.sh/)
 
-### TODO
+#### TODO
 
-- [x] better styles
 - [ ] JSON validation using a schema via ajv
 - [ ] relevant error messages
