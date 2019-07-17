@@ -23,11 +23,9 @@ function ResultTab({config, className = "", active}) {
     return (
       <div
         id="ResultTab"
-        className={`f4 i gray ${className}${
-          active ? "" : " dn"
-        }`}
+        className={`${className}${active ? "" : " dn"}`}
       >
-        <p>no form config supplied</p>
+        <p className="f4 i gray">no form config applied</p>
       </div>
     );
   } else {
