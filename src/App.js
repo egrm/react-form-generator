@@ -4,7 +4,6 @@ import ResultTab from "./components/ResultTab/ResultTab.js";
 import ConfigTab from "./components/ConfigTab/ConfigTab.js";
 import TabButton from "./components/buttons/TabButton.js";
 import "tachyons";
-import "./App.css";
 import testConfig from "./testConfig.js";
 
 function App() {
