@@ -13,11 +13,11 @@ function ConfigTab({
     <div
       id="ConfigTab"
       className={`${className} ${
-        active ? "flex" : " dn"
-      } flex-column`}
+        active ? "flex flex-column" : "dn"
+      }`}
     >
       <form
-        className="flex flex-column flex-auto"
+        className="flex flex-column flex-auto justify-start"
         action="javascript:void(0)"
         onSubmit={onSubmit}
       >
