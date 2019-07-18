@@ -56,10 +56,12 @@ function ResultTab({config, className = "", active}) {
     return (
       <div
         id="ResultTab"
-        className={`f5 ${className}${active ? "" : " dn"}`}
+        className={`f5 ${className} ${
+          active ? "flex flex-column" : "dn"
+        }`}
       >
         <form
-          className="h-100 overflow-y-auto"
+          className="flex-auto overflow-y-auto"
           action="javascript:void(0)"
         >
           <h3>{config.title || "default title"}</h3>
