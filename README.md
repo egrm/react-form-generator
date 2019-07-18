@@ -6,4 +6,3 @@
 
 - [ ] JSON validation using a schema via ajv
 - [ ] relevant error messages
-- [ ] fix Safari flexbox bug
