@@ -12,17 +12,19 @@ function ConfigTab({
   return (
     <div
       id="ConfigTab"
-      className={`${className}${active ? "" : " dn"}`}
+      className={`${className} ${
+        active ? "flex" : " dn"
+      } flex-column`}
     >
       <form
-        className="h-100 flex flex-column"
+        className="flex flex-column flex-auto"
         action="javascript:void(0)"
         onSubmit={onSubmit}
       >
         <textarea
           name="config"
           style={{resize: "none"}}
-          className={`pa2 ba w-100 h-100 ${
+          className={`pa2 ba w-100 flex-auto ${
             error ? "bw2 b--light-red" : "b--silver"
           }`}
           value={value}
